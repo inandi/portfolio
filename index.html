@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark light">
+  <title>Portfolio • Gobinda Nandi</title>
+  <meta name="description" content="Portfolio website of Gobinda Nandi: skills, anonymized projects, experience, and contact.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>💼</text></svg>">
+</head>
+<body>
+  <div class="bg" aria-hidden="true">
+    <canvas id="quantum" class="bg-canvas"></canvas>
+    <svg class="bg-fluid" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" role="img">
+      <defs>
+        <linearGradient id="g1" x1="0" x2="1" y1="0" y2="1">
+          <stop offset="0%" stop-color="#7aa2ff" stop-opacity="0.25"/>
+          <stop offset="100%" stop-color="#5de4c7" stop-opacity="0.12"/>
+        </linearGradient>
+        <linearGradient id="g2" x1="1" x2="0" y1="0" y2="1">
+          <stop offset="0%" stop-color="#5de4c7" stop-opacity="0.18"/>
+          <stop offset="100%" stop-color="#7aa2ff" stop-opacity="0.10"/>
+        </linearGradient>
+        <filter id="blur10"><feGaussianBlur stdDeviation="20"/></filter>
+      </defs>
+      <g filter="url(#blur10)">
+        <circle class="blob blob-a" cx="200" cy="200" r="160" fill="url(#g1)"/>
+        <circle class="blob blob-b" cx="600" cy="420" r="200" fill="url(#g2)"/>
+      </g>
+    </svg>
+  </div>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header class="site-header" id="top">
+    <div class="container header-inner"></div>
+  </header>
+
+  <main id="content">
+    <section class="hero" aria-label="Intro">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h1 class="reveal">Product-Focused Software Engineer</h1>
+          <p class="sub reveal">Building reliable, performant, and accessible web applications. Confidential client work anonymized.</p>
+          <div class="cta reveal">
+            <a class="btn primary" href="#projects">View Projects</a>
+          </div>
+        </div>
+        <div class="hero-badge reveal" aria-hidden="true">
+          <div class="badge glow"></div>
+          <img class="avatar" src="media/iNandi.jpeg" alt="Gobinda Nandi portrait" loading="lazy" decoding="async">
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container grid-2">
+        <div>
+          <h2 class="section-title">About</h2>
+          <p>
+            I’m a software engineer focused on delivering measurable impact with thoughtful UX, clean architecture,
+            and dependable delivery. I value clarity, performance, and maintainability.
+          </p>
+          <p>
+            I’ve led implementations across frontend and backend, collaborating with design, product, and infra teams.
+            Due to confidentiality, I describe outcomes and scope without naming clients.
+          </p>
+        </div>
+        <ul class="highlights">
+            <li>Built architecture from scratch to collect and pipeline ~1.5B data points periodically from client sites to AWS, secured over VPN; designed ingestion, storage, and processing flows for reliability and scale.</li>
+            <li>Led code quality initiative across a large legacy codebase; resolved ~84% violations and refactored critical paths to significantly improve performance and maintainability.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="skills" class="section">
+      <div class="container">
+        <h2 class="section-title">Skills</h2>
+        <ul class="chips">
+          <li>HTML5</li>
+          <li>CSS3</li>
+          <li>JavaScript (ES6+)</li>
+          <li>TypeScript</li>
+          <li>React</li>
+          <li>Node.js</li>
+          <li>REST</li>
+          <li>Performance</li>
+          <li>Accessibility</li>
+          <li>Testing</li>
+          <li>CI/CD</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="container">
+        <h2 class="section-title">Featured Projects <a href="projects.html" class="btn ghost" style="margin-left:8px;padding:4px 8px;">View all</a></h2>
+        <div class="cards">
+          <article class="card">
+            <div class="card-head">
+              <h3>Enterprise Analytics Dashboard</h3>
+              <span class="tag">Confidential</span>
+            </div>
+            <p>
+              Built a modular analytics suite for a global enterprise. Focus on performance and role-based access.
+            </p>
+            <ul class="meta">
+              <li>Role: Full‑stack engineer</li>
+              <li>Impact: 30% faster reporting, 99.95% uptime</li>
+              <li>Stack: React, Node.js, Postgres</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="card-head">
+              <h3>E‑commerce Optimization</h3>
+              <span class="tag">Confidential</span>
+            </div>
+            <p>
+              Led performance and UX initiatives for a high-traffic storefront. Implemented code-splitting and checkout UX.
+            </p>
+            <ul class="meta">
+              <li>Role: Frontend lead</li>
+              <li>Impact: +18% conversion, -40% LCP</li>
+              <li>Stack: React, TypeScript</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="card-head">
+              <h3>Internal Design System</h3>
+              <span class="tag">Confidential</span>
+            </div>
+            <p>
+              Created an accessible component library and tokens to unify UI across multiple apps.
+            </p>
+            <ul class="meta">
+              <li>Role: UI engineer</li>
+              <li>Impact: 50% faster feature delivery</li>
+              <li>Stack: Web Components, CSS</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="section">
+      <div class="container">
+        <h2 class="section-title">Experience</h2>
+        <ul class="timeline">
+          <li>
+            <div class="when">Mar 2024 — Present</div>
+            <div class="what">
+              <div class="org-head">
+                <img class="org-logo" src="media/entrata.jpeg" alt="Entrata India logo" onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2248%22 height=%2248%22><rect width=%2248%22 height=%2248%22 rx=%228%22 fill=%22%23141b22%22/><path d=%22M12 24h24v4H12z%22 fill=%22%239fb0c3%22/></svg>';">
+                <h3>Senior Engineer — Entrata India</h3>
+              </div>
+              <p>Remote (Maharashtra, India). Full‑stack contributions; AI integrations; AWS and data tooling.</p>
+            </div>
+          </li>
+          <li>
+            <div class="when">Dec 2023 — Mar 2024</div>
+            <div class="what">
+              <div class="org-head">
+                <img class="org-logo" src="media/mahindra_comviva_logo.jpeg" alt="Comviva logo" onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2248%22 height=%2248%22><rect width=%2248%22 height=%2248%22 rx=%228%22 fill=%22%23141b22%22/><path d=%22M12 24h24v4H12z%22 fill=%22%239fb0c3%22/></svg>';">
+                <h3>Senior Technical Lead — Comviva</h3>
+              </div>
+              <p>Remote (Karnataka, India). Product catalog leadership, Docker/AWS, Agile delivery.</p>
+            </div>
+          </li>
+          <li>
+            <div class="when">Feb 2023 — Nov 2023</div>
+            <div class="what">
+              <div class="org-head">
+                <img class="org-logo" src="media/mahindra_comviva_logo.jpeg" alt="Comviva logo" onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2248%22 height=%2248%22><rect width=%2248%22 height=%2248%22 rx=%228%22 fill=%22%23141b22%22/><path d=%22M12 24h24v4H12z%22 fill=%22%239fb0c3%22/></svg>';">
+                <h3>Technical Lead — Comviva</h3>
+              </div>
+              <p>Led engineering initiatives across web stack; CI/CD and delivery improvements.</p>
+            </div>
+          </li>
+          <li>
+            <div class="when">Apr 2021 — Jan 2023</div>
+            <div class="what">
+              <div class="org-head">
+                <img class="org-logo" src="media/tech_mahindra_logo.jpeg" alt="Tech Mahindra logo" onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2248%22 height=%2248%22><rect width=%2248%22 height=%2248%22 rx=%228%22 fill=%22%23141b22%22/><path d=%22M12 24h24v4H12z%22 fill=%22%239fb0c3%22/></svg>';">
+                <h3>Senior Software Engineer — Tech Mahindra</h3>
+              </div>
+              <p>Remote (Karnataka, India). Performance, search, and platform engineering on large‑scale systems.</p>
+            </div>
+          </li>
+          <li>
+            <div class="when">May 2018 — Mar 2021</div>
+            <div class="what">
+              <div class="org-head">
+                <img class="org-logo" src="media/tech_mahindra_logo.jpeg" alt="Tech Mahindra logo" onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2248%22 height=%2248%22><rect width=%2248%22 height=%2248%22 rx=%228%22 fill=%22%23141b22%22/><path d=%22M12 24h24v4H12z%22 fill=%22%239fb0c3%22/></svg>';">
+                <h3>Software Engineer — Tech Mahindra</h3>
+              </div>
+              <p>Feature development, Magento/PHP stack, CI/CD pipelines, cloud tooling.</p>
+            </div>
+          </li>
+          <li>
+            <div class="when">Feb 2019 — May 2019</div>
+            <div class="what">
+              <div class="org-head">
+                <img class="org-logo" src="media/logos/bridal-colours.png" alt="The Bridal Colours logo" onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2248%22 height=%2248%22><rect width=%2248%22 height=%2248%22 rx=%228%22 fill=%22%23141b22%22/><path d=%22M12 24h24v4H12z%22 fill=%22%239fb0c3%22/></svg>';">
+                <h3>Web Developer — The Bridal Colours</h3>
+              </div>
+              <p>West Bengal, India. Web build and integrations across AWS/PHP/React.</p>
+            </div>
+          </li>
+          <li>
+            <div class="when">Oct 2018 — Jan 2019</div>
+            <div class="what">
+              <div class="org-head">
+                <img class="org-logo" src="media/logos/outsourcethink.png" alt="OutsourceThink Pvt Ltd logo" onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2248%22 height=%2248%22><rect width=%2248%22 height=%2248%22 rx=%228%22 fill=%22%23141b22%22/><path d=%22M12 24h24v4H12z%22 fill=%22%239fb0c3%22/></svg>';">
+                <h3>Software Engineer — OutsourceThink Pvt Ltd</h3>
+              </div>
+              <p>Karnataka, India. Node/React/CodeIgniter solutions; data and API integrations.</p>
+            </div>
+          </li>
+          <li>
+            <div class="when">Nov 2017 — Aug 2018</div>
+            <div class="what">
+              <div class="org-head">
+                <img class="org-logo" src="media/logos/athena-esolutions.png" alt="Athena eSolutions logo" onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2248%22 height=%2248%22><rect width=%2248%22 height=%2248%22 rx=%228%22 fill=%22%23141b22%22/><path d=%22M12 24h24v4H12z%22 fill=%22%239fb0c3%22/></svg>';">
+                <h3>PHP Developer — Athena eSolutions</h3>
+              </div>
+              <p>West Bengal, India. PHP/JS development; third‑party API integrations; search and data.</p>
+            </div>
+          </li>
+          <li>
+            <div class="when">Jul 2017 — Oct 2017</div>
+            <div class="what">
+              <div class="org-head">
+                <img class="org-logo" src="media/logos/neologic-innovations.png" alt="Neologic Innovations Pvt Ltd logo" onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2248%22 height=%2248%22><rect width=%2248%22 height=%2248%22 rx=%228%22 fill=%22%23141b22%22/><path d=%22M12 24h24v4H12z%22 fill=%22%239fb0c3%22/></svg>';">
+                <h3>PHP Developer — Neologic Innovations Pvt Ltd</h3>
+              </div>
+              <p>West Bengal, India. CodeIgniter/Opencart; web features and integrations.</p>
+            </div>
+          </li>
+          <li>
+            <div class="when">2016 — Jun 2017</div>
+            <div class="what">
+              <div class="org-head">
+                <img class="org-logo" src="media/logos/mobotics.png" alt="Mobotics Technologies Pvt Ltd logo" onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2248%22 height=%2248%22><rect width=%2248%22 height=%2248%22 rx=%228%22 fill=%22%23141b22%22/><path d=%22M12 24h24v4H12z%22 fill=%22%239fb0c3%22/></svg>';">
+                <h3>Software Developer — Mobotics Technologies Pvt Ltd</h3>
+              </div>
+              <p>West Bengal, India. Full‑stack (PHP/CodeIgniter/AngularJS; MySQL/PostgreSQL).</p>
+            </div>
+          </li>
+          <li>
+            <div class="when">Feb 2011 — Jan 2012</div>
+            <div class="what">
+              <div class="org-head">
+                <img class="org-logo" src="media/logos/patton.png" alt="Patton Group logo" onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2248%22 height=%2248%22><rect width=%2248%22 height=%2248%22 rx=%228%22 fill=%22%23141b22%22/><path d=%22M12 24h24v4H12z%22 fill=%22%239fb0c3%22/></svg>';">
+                <h3>Software Developer — Patton Group</h3>
+              </div>
+              <p>West Bengal, India. VB/SQL applications; reporting and internal tools.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="achievements" class="section">
+      <div class="container">
+        <h2 class="section-title">Achievements</h2>
+        <ul class="highlights">
+          <li>Reduced Largest Contentful Paint by up to 40% across key user journeys</li>
+          <li>Delivered features that improved conversion by 15–25% via UX experiments</li>
+          <li>Rolled out component library adoption across multiple teams in < 3 months</li>
+          <li>Established performance budgets and accessibility checks in CI</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="awards" class="section">
+      <div class="container">
+        <h2 class="section-title">Awards</h2>
+        <div class="cards" style="grid-template-columns:1fr; gap:14px;">
+          <article class="award-card">
+            <img class="award-img" src="media/comviva_award_1.jpg" alt="Certificate preview" loading="lazy">
+            <div>
+              <h3 class="award-title">Discretionary Award (Unit Level) - Comviva</h3>
+              <p class="award-desc">for the period of Q4, FY'22-23.</p>
+            </div>
+          </article>
+          <article class="award-card">
+            <img class="award-img" src="media/techm_bravo_1.png" alt="Certificate preview" loading="lazy">
+            <div>
+              <h3 class="award-title">Bravo Award - Tech Mahindra</h3>
+              <p class="award-desc">21st December 2021</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="extracurricular" class="section">
+      <div class="container">
+        <h2 class="section-title">Extracurricular</h2>
+        <ul class="highlights">
+          <li>Open‑source contributions to performance and accessibility tooling</li>
+          <li>Mentor for early‑career developers; code reviews and study groups</li>
+          <li>Tech community organizer; meetups and knowledge‑sharing sessions</li>
+          <li>Volunteering on non‑profit web initiatives</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container"></div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
