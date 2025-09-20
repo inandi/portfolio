@@ -8,7 +8,7 @@ function getMenuHtml() {
     '<nav class="nav" aria-label="Primary">' +
       '<button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>' +
       '<ul id="site-nav" class="nav-list">' +
-        '<li><a href="#">Career</a></li>' +
+        '<li><a href="index.html">Home</a></li>' +
         '<li class="has-submenu">' +
           '<button class="submenu-toggle" aria-expanded="false">Career</button>' +
           '<ul class="submenu">' +
