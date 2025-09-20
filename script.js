@@ -46,7 +46,7 @@ function getFooterHtml() {
       '<a class="btn ghost" href="https://github.com/inandi" target="_blank" rel="noopener">GitHub</a>' +
       '<a class="btn ghost" href="https://stackoverflow.com/users/7991798/gobinda-nandi" target="_blank" rel="noopener">Stack Overflow</a>' +
     '</div>' +
-    '<p>© <span id="year"></span> Gobinda Nandi. All rights reserved.</p>'
+    '<p>© <span id="year"></span> Gobinda Nandi</p>'
   );
 }
 
