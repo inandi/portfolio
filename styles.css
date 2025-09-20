@@ -74,14 +74,32 @@ main { padding-top: 72px; }
 .has-submenu { position: relative; }
 .submenu-toggle { background: transparent; color: var(--muted); border: 1px solid transparent; padding: 10px 12px; border-radius: 10px; cursor: pointer; font-size: 14px; line-height: 1.2; }
 .submenu-toggle:hover, .has-submenu.open > .submenu-toggle { color: var(--text); background: var(--elev-2); }
-.submenu { position: absolute; top: calc(100% + 8px); left: 0; display: grid; gap: 4px; min-width: 200px; background: var(--elev-2); border: 1px solid var(--border); border-radius: 12px; padding: 8px; opacity: 0; transform: translateY(-4px); pointer-events: none; transition: opacity .18s ease, transform .18s ease; z-index: 1000; list-style: none; }
-.has-submenu.open > .submenu, .has-submenu:focus-within > .submenu { opacity: 1; transform: translateY(0); pointer-events: auto; }
-.submenu a { display: block; padding: 8px 10px; border-radius: 8px; }
+.submenu { position: absolute; top: 100%; left: 0; display: grid; gap: 4px; min-width: 200px; background: var(--elev-2); border: 1px solid var(--border); border-radius: 12px; padding: 8px; opacity: 0; transform: translateY(-4px); pointer-events: none; transition: opacity .18s ease, transform .18s ease; z-index: 1000; list-style: none; }
+/* Open on hover and focus (keyboard). Keep .open to support any future JS usage */
+.has-submenu.open > .submenu, .has-submenu:focus-within > .submenu, .has-submenu:hover > .submenu { opacity: 1; transform: translateY(0); pointer-events: auto; }
+.submenu-toggle { display: inline-flex; align-items: center; gap: 6px; }
+/* Caret indicator: top-level dropdown shows up/down */
+.has-submenu > .submenu-toggle::after { content: "▾"; font-size: 12px; line-height: 1; transition: transform .18s ease; opacity: .9; }
+/* Limit rotation to only the first-level menu items */
+.nav-list > .has-submenu:hover > .submenu-toggle::after,
+.nav-list > .has-submenu.open > .submenu-toggle::after,
+.nav-list > .has-submenu:focus-within > .submenu-toggle::after { transform: rotate(180deg); }
+
+/* Nested submenu: show left/right chevron instead of up/down */
+.submenu .has-submenu > .submenu-toggle::after { content: "▸"; transform: none; }
+.submenu .has-submenu:hover > .submenu-toggle::after,
+.submenu .has-submenu.open > .submenu-toggle::after,
+.submenu .has-submenu:focus-within > .submenu-toggle::after { content: "◂"; }
+.submenu a { display: block; padding: 8px 10px; border-radius: 8px; font-size: 14px; }
 .submenu a:hover { background: var(--elev-1); color: var(--text); }
 
 /* Nested submenu */
 .submenu .has-submenu { position: relative; }
-.submenu .has-submenu > .submenu { top: -8px; right: calc(100% + 8px); left: auto; }
+.submenu .has-submenu > .submenu { top: -8px; right: 100%; left: auto; }
+/* Hover bridges to avoid gap flicker */
+.has-submenu::after { content: ""; position: absolute; left: 0; right: 0; top: 100%; height: 10px; }
+.submenu .has-submenu::after { content: ""; position: absolute; top: 0; right: 100%; width: 10px; height: 100%; }
+.submenu .has-submenu:hover > .submenu, .submenu .has-submenu:focus-within > .submenu, .submenu .has-submenu.open > .submenu { opacity: 1; transform: translateY(0); pointer-events: auto; }
 
 /* Hero */
 .hero { padding: 72px 0 28px; border-bottom: 1px solid var(--border); }
@@ -102,7 +120,7 @@ main { padding-top: 72px; }
 .btn.ghost { background: transparent; }
 
 /* Sections */
-.section { padding: 48px 0; border-bottom: 1px solid var(--border); }
+.section { padding: 15px 0; border-bottom: 1px solid var(--border); }
 .section-title { font-size: 20px; margin: 0 0 18px; color: var(--text); letter-spacing: .6px; text-transform: uppercase; opacity: .9; }
 .grid-2 { display: grid; grid-template-columns: 1.1fr .9fr; gap: 24px; }
 .highlights { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
@@ -126,6 +144,19 @@ main { padding-top: 72px; }
 .award-img { width: 100%; height: 150px; object-fit: cover; border-radius: 10px; border: 1px solid var(--border); background: #0e1319; }
 .award-title { margin: 0 0 6px; font-size: 16px; }
 .award-desc { margin: 0; color: var(--muted); }
+
+/* Books */
+.book-cover { width: 100%; aspect-ratio: 2 / 3; height: auto; object-fit: contain; border-radius: 10px; border: 1px solid var(--border); background: #0e1319; display: block; }
+.book-link { color: inherit; text-decoration: none; }
+.book-link:hover { text-decoration: underline; }
+
+/* Breadcrumb */
+.breadcrumb { font-size: 14px; color: var(--muted); margin-bottom: 10px; }
+.breadcrumb ol { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.breadcrumb li { display: inline-flex; align-items: center; gap: 6px; }
+.breadcrumb li+li::before { content: "›"; opacity: .6; }
+.breadcrumb a { color: inherit; text-decoration: none; padding: 4px 6px; border-radius: 6px; }
+.breadcrumb a:hover { color: var(--text); background: var(--elev-2); }
 
 @media (max-width: 640px) {
   .award-card { grid-template-columns: 1fr; }

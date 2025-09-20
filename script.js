@@ -208,19 +208,40 @@ if (!prefersReducedMotion) {
 })();
 
 function initSubmenus() {
+  // Convert click-to-open to hover/focus behavior with proper aria state updates
   const submenuGroups = Array.from(document.querySelectorAll('.has-submenu'));
   submenuGroups.forEach(group => {
     const btn = group.querySelector(':scope > .submenu-toggle');
-    if (!btn) return;
+    const submenu = group.querySelector(':scope > .submenu');
+    if (!btn || !submenu) return;
+
+    // Update aria on hover/focus
+    function setExpanded(expanded) {
+      btn.setAttribute('aria-expanded', String(expanded));
+    }
+
+    // Mouse enter/leave
+    let pinned = false;
+    group.addEventListener('mouseenter', () => { if (!pinned) setExpanded(true); });
+    group.addEventListener('mouseleave', () => { if (!pinned) setExpanded(false); });
+
+    // Keyboard focus handling to allow hover-like open via keyboard navigation
+    btn.addEventListener('focus', () => setExpanded(true));
+    btn.addEventListener('blur', () => setExpanded(false));
+    submenu.addEventListener('focusin', () => setExpanded(true));
+    submenu.addEventListener('focusout', (e) => {
+      // collapse when focus leaves the group
+      const related = e.relatedTarget;
+      if (!group.contains(related)) setExpanded(false);
+    });
+
+    // Click-to-pin: clicking the toggle pins the submenu open; clicking again unpins
     btn.addEventListener('click', (e) => {
-      const isOpen = group.classList.contains('open');
-      submenuGroups.forEach(g => { if (g !== group) { g.classList.remove('open'); g.querySelector('.submenu-toggle')?.setAttribute('aria-expanded', 'false'); } });
-      group.classList.toggle('open');
-      btn.setAttribute('aria-expanded', String(!isOpen));
-      e.stopPropagation();
+      e.preventDefault();
+      pinned = !pinned;
+      setExpanded(pinned);
     });
   });
-  document.addEventListener('click', () => submenuGroups.forEach(g => { g.classList.remove('open'); g.querySelector('.submenu-toggle')?.setAttribute('aria-expanded', 'false'); }));
 }
 
 // Initialize header and menus first
