@@ -12,7 +12,7 @@ function getMenuHtml() {
         '<li class="has-submenu">' +
           '<button class="submenu-toggle" aria-expanded="false">Career</button>' +
           '<ul class="submenu">' +
-            '<li><a href="projects.html">Projects (Org)</a></li>' +
+            '<li><a href="projects.html">Projects</a></li>' +
             '<li class="has-submenu">' +
             '<button class="submenu-toggle" aria-expanded="false">Achievements</button>' +
             '<ul class="submenu">' +
