@@ -2,30 +2,30 @@
 function getMenuHtml() {
   return (
     '<a class="brand" href="index.html" aria-label="Home">' +
-      '<span class="brand-mark" aria-hidden="true">●</span>' +
-      '<span class="brand-text">Gobinda Nandi</span>' +
+    '<span class="brand-mark" aria-hidden="true">●</span>' +
+    '<span class="brand-text">Gobinda Nandi</span>' +
     '</a>' +
     '<nav class="nav" aria-label="Primary">' +
-      '<button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>' +
-      '<ul id="site-nav" class="nav-list">' +
-        '<li><a href="index.html">Home</a></li>' +
-        '<li class="has-submenu">' +
-          '<button class="submenu-toggle" aria-expanded="false">Career</button>' +
-          '<ul class="submenu">' +
-            '<li><a href="projects.html">Projects</a></li>' +
-            '<li class="has-submenu">' +
-            '<button class="submenu-toggle" aria-expanded="false">Achievements</button>' +
-            '<ul class="submenu">' +
-                '<li><a href="courses.html">Courses & Certifications</a></li>' +
-                '<li><a href="books.html">Books</a></li>' +
-                '<li><a href="apps.html">Mobile Apps</a></li>' +
-                '<li><a href="blogs.html">Blogs</a></li>' +
-                '<li><a href="misc.html">Miscellaneous</a></li>' +
-              '</ul>' +
-            '</li>' +
-          '</ul>' +
-        '</li>' +
-      '</ul>' +
+    '<button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>' +
+    '<ul id="site-nav" class="nav-list">' +
+    '<li><a href="index.html">Home</a></li>' +
+    '<li class="has-submenu">' +
+    '<button class="submenu-toggle" aria-expanded="false">Career</button>' +
+    '<ul class="submenu">' +
+    '<li><a href="projects.html">Projects</a></li>' +
+    '<li class="has-submenu">' +
+    '<button class="submenu-toggle" aria-expanded="false">Achievements</button>' +
+    '<ul class="submenu">' +
+    '<li><a href="courses.html">Courses & Certifications</a></li>' +
+    '<li><a href="books.html">Books</a></li>' +
+    '<li><a href="apps.html">Mobile Apps</a></li>' +
+    '<li><a href="blogs.html">Blogs</a></li>' +
+    '<li><a href="misc.html">Miscellaneous</a></li>' +
+    '</ul>' +
+    '</li>' +
+    '</ul>' +
+    '</li>' +
+    '</ul>' +
     '</nav>'
   );
 }
@@ -41,10 +41,10 @@ function loadMenu() {
 function getFooterHtml() {
   return (
     '<div class="contact-row" style="justify-content:center; margin-bottom:10px;">' +
-      '<a class="btn primary" href="mailto:01ampoule_zero@icloud.com">01ampoule_zero@icloud.com</a>' +
-      '<a class="btn ghost" href="https://www.linkedin.com/in/inandi/" target="_blank" rel="noopener">LinkedIn</a>' +
-      '<a class="btn ghost" href="https://github.com/inandi" target="_blank" rel="noopener">GitHub</a>' +
-      '<a class="btn ghost" href="https://stackoverflow.com/users/7991798/gobinda-nandi" target="_blank" rel="noopener">Stack Overflow</a>' +
+    '<a class="btn primary" href="mailto:01ampoule_zero@icloud.com">01ampoule_zero@icloud.com</a>' +
+    '<a class="btn ghost" href="https://www.linkedin.com/in/inandi/" target="_blank" rel="noopener">LinkedIn</a>' +
+    '<a class="btn ghost" href="https://github.com/inandi" target="_blank" rel="noopener">GitHub</a>' +
+    '<a class="btn ghost" href="https://stackoverflow.com/users/7991798/gobinda-nandi" target="_blank" rel="noopener">Stack Overflow</a>' +
     '</div>' +
     '<p>© <span id="year"></span> Gobinda Nandi</p>'
   );
