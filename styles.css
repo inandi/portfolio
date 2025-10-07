@@ -851,3 +851,24 @@ main {
     display: flex;
   }
 }
+
+/* Courses Grid Responsive */
+.courses-grid {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media (max-width: 768px) {
+  .courses-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .certificate-img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .card h3 {
+    font-size: 14px;
+    line-height: 1.3;
+  }
+}
