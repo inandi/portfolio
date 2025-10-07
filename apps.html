@@ -56,80 +56,75 @@
           </ol>
         </nav>
 
-        <div class="cards" style="grid-template-columns: 1fr; margin-bottom:16px;">
-          <article class="card">
-            <div style="display: flex; gap: 20px; align-items: flex-start;">
-              <div style="flex: 1;">
-                <div class="app-row">
-                  <div class="app-head">
-                    <img class="app-icon" src="media/apps/playstore-svgrepo-com.svg" alt="Google Play icon" loading="lazy"
-                      decoding="async">
-                    <div>
-                      <h3 style="margin:0;">NA (2026)</h3>
-                      <span class="tag">Coming Soon</span>
-                    </div>
+        <div class="cards apps-grid">
+          <article class="card app-card">
+            <div class="app-content">
+              <div class="app-row">
+                <div class="app-head">
+                  <img class="app-icon" src="media/apps/playstore-svgrepo-com.svg" alt="Google Play icon" loading="lazy"
+                    decoding="async">
+                  <div>
+                    <h3>NA (2026)</h3>
+                    <span class="tag">Coming Soon</span>
                   </div>
                 </div>
-                <p style="margin:10px 0 0; color:var(--muted);">
-                  Stay tuned for more details about this upcoming Android app planned for 2026.
-                </p>
-                <p style="margin:8px 0 0; color:var(--muted); font-size:13px;">Planned release: 2026</p>
               </div>
-              <div style="flex-shrink: 0;">
-                <div
-                  style="width: 200px; height: 150px; background: var(--elev-2); border: 2px dashed var(--border); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--muted);">
-                  <span style="font-size: 48px;">📱</span>
-                </div>
+              <p class="app-description">
+                Stay tuned for more details about this upcoming Android app planned for 2026.
+              </p>
+              <p class="app-release-info">Planned release: 2026</p>
+            </div>
+            <div class="app-media">
+              <div class="app-placeholder">
+                <span style="font-size: 48px;">📱</span>
               </div>
             </div>
           </article>
           
-          <article class="card">
-            <div style="display: flex; gap: 20px; align-items: flex-start;">
-              <div style="flex: 1;">
-                <div class="app-row">
-                  <div class="app-head">
-                    <img class="app-icon" src="media/apps/playstore-svgrepo-com.svg" alt="Google Play icon" loading="lazy"
-                      decoding="async">
-                    <div>
-                      <h3 style="margin:0;">
-                        <a class="book-link" href="https://play.google.com/store/apps/details?id=com.inandi.smoke&pli=1"
-                          target="_blank" rel="noopener">Quit Smoking</a>
-                      </h3>
-                      <span class="tag">Android</span>
-                    </div>
+          <article class="card app-card">
+            <div class="app-content">
+              <div class="app-row">
+                <div class="app-head">
+                  <img class="app-icon" src="media/apps/playstore-svgrepo-com.svg" alt="Google Play icon" loading="lazy"
+                    decoding="async">
+                  <div>
+                    <h3>
+                      <a class="book-link" href="https://play.google.com/store/apps/details?id=com.inandi.smoke&pli=1"
+                        target="_blank" rel="noopener">Quit Smoking</a>
+                    </h3>
+                    <span class="tag">Android</span>
                   </div>
-                  <img class="app-icon-lg" src="media/apps/quit_smoking_logo_gobinda_nandi.jpg" alt="Quit Smoking app icon"
-                    loading="lazy" decoding="async">
                 </div>
-                <p style="margin:10px 0 0; color:var(--muted);">
-                  "Quit Smoking" is your companion in your journey to a smoke-free life. Track your daily cigarette
-                  consumption and see how your quit rate improves over time. Unlock badges/awards as you reach important
-                  milestones, providing you with a sense of accomplishment.
-                </p>
-                <p style="margin:8px 0 0; color:var(--muted); font-size:13px;">Published on Dec 16, 2024</p>
-                <div class="cta" style="margin-top:10px;">
-                  <a class="btn primary" href="https://play.google.com/store/apps/details?id=com.inandi.smoke&pli=1"
-                    target="_blank" rel="noopener">View on Google Play</a>
-                </div>
+                <img class="app-icon-lg" src="media/apps/quit_smoking_logo_gobinda_nandi.jpg" alt="Quit Smoking app icon"
+                  loading="lazy" decoding="async">
               </div>
-              <div style="flex-shrink: 0;">
-                <div class="app-carousel" style="width: 200px; position: relative;">
-                  <div class="carousel-container" style="overflow: hidden; border-radius: 8px; border: 1px solid var(--border);">
-                    <div class="carousel-slides" style="display: flex; transition: transform 0.3s ease;">
-                      <img src="media/apps/quit_smoking_home.png" alt="Quit Smoking app home screen" 
-                           style="width: 200px; height: auto; flex-shrink: 0;" loading="lazy" decoding="async">
-                      <img src="media/apps/quit_smoking_badge.png" alt="Quit Smoking app badge screen" 
-                           style="width: 200px; height: auto; flex-shrink: 0;" loading="lazy" decoding="async">
-                      <img src="media/apps/quit_smoking_about.png" alt="Quit Smoking app about screen" 
-                           style="width: 200px; height: auto; flex-shrink: 0;" loading="lazy" decoding="async">
-                    </div>
+              <p class="app-description">
+                "Quit Smoking" is your companion in your journey to a smoke-free life. Track your daily cigarette
+                consumption and see how your quit rate improves over time. Unlock badges/awards as you reach important
+                milestones, providing you with a sense of accomplishment.
+              </p>
+              <p class="app-release-info">Published on Dec 16, 2024</p>
+              <div class="cta">
+                <a class="btn primary" href="https://play.google.com/store/apps/details?id=com.inandi.smoke&pli=1"
+                  target="_blank" rel="noopener">View on Google Play</a>
+              </div>
+            </div>
+            <div class="app-media">
+              <div class="app-carousel">
+                <div class="carousel-container">
+                  <div class="carousel-slides">
+                    <img src="media/apps/quit_smoking_home.png" alt="Quit Smoking app home screen" 
+                         loading="lazy" decoding="async">
+                    <img src="media/apps/quit_smoking_badge.png" alt="Quit Smoking app badge screen" 
+                         loading="lazy" decoding="async">
+                    <img src="media/apps/quit_smoking_about.png" alt="Quit Smoking app about screen" 
+                         loading="lazy" decoding="async">
                   </div>
-                  <div class="carousel-dots" style="display: flex; justify-content: center; gap: 6px; margin-top: 8px;">
-                    <button class="carousel-dot active" data-slide="0" style="width: 8px; height: 8px; border-radius: 50%; border: none; background: var(--brand); cursor: pointer; opacity: 1;"></button>
-                    <button class="carousel-dot" data-slide="1" style="width: 8px; height: 8px; border-radius: 50%; border: none; background: var(--muted); cursor: pointer; opacity: 0.5;"></button>
-                    <button class="carousel-dot" data-slide="2" style="width: 8px; height: 8px; border-radius: 50%; border: none; background: var(--muted); cursor: pointer; opacity: 0.5;"></button>
-                  </div>
+                </div>
+                <div class="carousel-dots">
+                  <button class="carousel-dot active" data-slide="0"></button>
+                  <button class="carousel-dot" data-slide="1"></button>
+                  <button class="carousel-dot" data-slide="2"></button>
                 </div>
               </div>
             </div>

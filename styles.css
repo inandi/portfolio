@@ -969,3 +969,128 @@ main {
     font-size: 13px;
   }
 }
+
+/* Apps Grid Responsive */
+.apps-grid {
+  grid-template-columns: 1fr;
+  margin-bottom: 16px;
+}
+
+.app-card {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.app-content {
+  flex: 1;
+}
+
+.app-content h3 {
+  margin: 0;
+}
+
+.app-description {
+  margin: 10px 0 0;
+  color: var(--muted);
+}
+
+.app-release-info {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.app-content .cta {
+  margin-top: 10px;
+}
+
+.app-media {
+  flex-shrink: 0;
+}
+
+.app-placeholder {
+  width: 200px;
+  height: 150px;
+  background: var(--elev-2);
+  border: 2px dashed var(--border);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+}
+
+.app-carousel {
+  width: 200px;
+  position: relative;
+}
+
+.carousel-container {
+  overflow: hidden;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.carousel-slides {
+  display: flex;
+  transition: transform 0.3s ease;
+}
+
+.carousel-slides img {
+  width: 200px;
+  height: auto;
+  flex-shrink: 0;
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.carousel-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: var(--muted);
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.carousel-dot.active {
+  background: var(--brand);
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .app-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .app-content {
+    width: 100%;
+  }
+  
+  .app-description {
+    text-align: left;
+    font-size: 13px;
+  }
+  
+  .app-placeholder {
+    width: 250px;
+    height: 180px;
+  }
+  
+  .app-carousel {
+    width: 250px;
+  }
+  
+  .carousel-slides img {
+    width: 250px;
+  }
+}
