@@ -56,52 +56,82 @@
           </ol>
         </nav>
 
-        <div class="cards" style="margin-bottom:16px;">
+        <div class="cards" style="grid-template-columns: 1fr; margin-bottom:16px;">
           <article class="card">
-            <div class="app-row">
-              <div class="app-head">
-                <img class="app-icon" src="media/apps/playstore-svgrepo-com.svg" alt="Google Play icon" loading="lazy"
-                  decoding="async">
-                <div>
-                  <h3 style="margin:0;">NA (2026)</h3>
-                  <span class="tag">Coming Soon</span>
+            <div style="display: flex; gap: 20px; align-items: flex-start;">
+              <div style="flex: 1;">
+                <div class="app-row">
+                  <div class="app-head">
+                    <img class="app-icon" src="media/apps/playstore-svgrepo-com.svg" alt="Google Play icon" loading="lazy"
+                      decoding="async">
+                    <div>
+                      <h3 style="margin:0;">NA (2026)</h3>
+                      <span class="tag">Coming Soon</span>
+                    </div>
+                  </div>
+                </div>
+                <p style="margin:10px 0 0; color:var(--muted);">
+                  Stay tuned for more details about this upcoming Android app planned for 2026.
+                </p>
+                <p style="margin:8px 0 0; color:var(--muted); font-size:13px;">Planned release: 2026</p>
+              </div>
+              <div style="flex-shrink: 0;">
+                <div
+                  style="width: 200px; height: 150px; background: var(--elev-2); border: 2px dashed var(--border); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--muted);">
+                  <span style="font-size: 48px;">📱</span>
                 </div>
               </div>
-              <div
-                style="width: 64px; height: 64px; background: var(--elev-2); border: 2px dashed var(--border); border-radius: 14px; display: flex; align-items: center; justify-content: center; color: var(--muted); flex-shrink: 0;">
-                <span style="font-size: 20px;">📱</span>
-              </div>
             </div>
-            <p style="margin:10px 0 0; color:var(--muted);">
-              Stay tuned for more details about this upcoming Android app planned for 2026.
-            </p>
-            <p style="margin:8px 0 0; color:var(--muted); font-size:13px;">Planned release: 2026</p>
           </article>
+          
           <article class="card">
-            <div class="app-row">
-              <div class="app-head">
-                <img class="app-icon" src="media/apps/playstore-svgrepo-com.svg" alt="Google Play icon" loading="lazy"
-                  decoding="async">
-                <div>
-                  <h3 style="margin:0;">
-                    <a class="book-link" href="https://play.google.com/store/apps/details?id=com.inandi.smoke&pli=1"
-                      target="_blank" rel="noopener">Quit Smoking</a>
-                  </h3>
-                  <span class="tag">Android</span>
+            <div style="display: flex; gap: 20px; align-items: flex-start;">
+              <div style="flex: 1;">
+                <div class="app-row">
+                  <div class="app-head">
+                    <img class="app-icon" src="media/apps/playstore-svgrepo-com.svg" alt="Google Play icon" loading="lazy"
+                      decoding="async">
+                    <div>
+                      <h3 style="margin:0;">
+                        <a class="book-link" href="https://play.google.com/store/apps/details?id=com.inandi.smoke&pli=1"
+                          target="_blank" rel="noopener">Quit Smoking</a>
+                      </h3>
+                      <span class="tag">Android</span>
+                    </div>
+                  </div>
+                  <img class="app-icon-lg" src="media/apps/quit_smoking_logo_gobinda_nandi.jpg" alt="Quit Smoking app icon"
+                    loading="lazy" decoding="async">
+                </div>
+                <p style="margin:10px 0 0; color:var(--muted);">
+                  "Quit Smoking" is your companion in your journey to a smoke-free life. Track your daily cigarette
+                  consumption and see how your quit rate improves over time. Unlock badges/awards as you reach important
+                  milestones, providing you with a sense of accomplishment.
+                </p>
+                <p style="margin:8px 0 0; color:var(--muted); font-size:13px;">Published on Dec 16, 2024</p>
+                <div class="cta" style="margin-top:10px;">
+                  <a class="btn primary" href="https://play.google.com/store/apps/details?id=com.inandi.smoke&pli=1"
+                    target="_blank" rel="noopener">View on Google Play</a>
                 </div>
               </div>
-              <img class="app-icon-lg" src="media/apps/quit_smoking_logo_gobinda_nandi.jpg" alt="Quit Smoking app icon"
-                loading="lazy" decoding="async">
-            </div>
-            <p style="margin:10px 0 0; color:var(--muted);">
-              "Quit Smoking" is your companion in your journey to a smoke-free life. Track your daily cigarette
-              consumption and see how your quit rate improves over time. Unlock badges/awards as you reach important
-              milestones, providing you with a sense of accomplishment.
-            </p>
-            <p style="margin:8px 0 0; color:var(--muted); font-size:13px;">Published on Dec 16, 2024</p>
-            <div class="cta" style="margin-top:10px;">
-              <a class="btn primary" href="https://play.google.com/store/apps/details?id=com.inandi.smoke&pli=1"
-                target="_blank" rel="noopener">View on Google Play</a>
+              <div style="flex-shrink: 0;">
+                <div class="app-carousel" style="width: 200px; position: relative;">
+                  <div class="carousel-container" style="overflow: hidden; border-radius: 8px; border: 1px solid var(--border);">
+                    <div class="carousel-slides" style="display: flex; transition: transform 0.3s ease;">
+                      <img src="media/apps/quit_smoking_home.png" alt="Quit Smoking app home screen" 
+                           style="width: 200px; height: auto; flex-shrink: 0;" loading="lazy" decoding="async">
+                      <img src="media/apps/quit_smoking_badge.png" alt="Quit Smoking app badge screen" 
+                           style="width: 200px; height: auto; flex-shrink: 0;" loading="lazy" decoding="async">
+                      <img src="media/apps/quit_smoking_about.png" alt="Quit Smoking app about screen" 
+                           style="width: 200px; height: auto; flex-shrink: 0;" loading="lazy" decoding="async">
+                    </div>
+                  </div>
+                  <div class="carousel-dots" style="display: flex; justify-content: center; gap: 6px; margin-top: 8px;">
+                    <button class="carousel-dot active" data-slide="0" style="width: 8px; height: 8px; border-radius: 50%; border: none; background: var(--brand); cursor: pointer; opacity: 1;"></button>
+                    <button class="carousel-dot" data-slide="1" style="width: 8px; height: 8px; border-radius: 50%; border: none; background: var(--muted); cursor: pointer; opacity: 0.5;"></button>
+                    <button class="carousel-dot" data-slide="2" style="width: 8px; height: 8px; border-radius: 50%; border: none; background: var(--muted); cursor: pointer; opacity: 0.5;"></button>
+                  </div>
+                </div>
+              </div>
             </div>
           </article>
         </div>
@@ -115,6 +145,49 @@
   </footer>
 
   <script src="script.js"></script>
+  <script>
+    // App Carousel functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const carousel = document.querySelector('.app-carousel');
+      if (!carousel) return;
+      
+      const slides = carousel.querySelector('.carousel-slides');
+      const dots = carousel.querySelectorAll('.carousel-dot');
+      let currentSlide = 0;
+      
+      function updateCarousel() {
+        const slideWidth = 200; // Width of each slide
+        slides.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+        
+        // Update dots
+        dots.forEach((dot, index) => {
+          if (index === currentSlide) {
+            dot.classList.add('active');
+            dot.style.background = 'var(--brand)';
+            dot.style.opacity = '1';
+          } else {
+            dot.classList.remove('active');
+            dot.style.background = 'var(--muted)';
+            dot.style.opacity = '0.5';
+          }
+        });
+      }
+      
+      // Add click handlers to dots
+      dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+          currentSlide = index;
+          updateCarousel();
+        });
+      });
+      
+      // Auto-advance carousel every 4 seconds
+      setInterval(() => {
+        currentSlide = (currentSlide + 1) % dots.length;
+        updateCarousel();
+      }, 4000);
+    });
+  </script>
 </body>
 
 </html>
