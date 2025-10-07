@@ -1094,3 +1094,148 @@ main {
     width: 250px;
   }
 }
+
+/* Blogs Grid Responsive */
+.blogs-grid {
+  grid-template-columns: 1fr;
+}
+
+/* Blog cards inherit default card styles */
+
+.blog-meta {
+  margin: 0;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+}
+
+.blog-favicon {
+  width: 16px;
+  height: 16px;
+  vertical-align: -3px;
+  margin-right: 6px;
+}
+
+.blog-description {
+  margin: 10px 0 0;
+  color: var(--muted);
+}
+
+.blog-card .cta {
+  margin-top: 10px;
+}
+
+/* Extensions Grid - 3 items per row on desktop */
+.extensions-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.extensions-grid .misc-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  text-align: center;
+}
+
+/* Game Grid - 1 item per row on desktop */
+.game-grid {
+  grid-template-columns: 1fr;
+}
+
+.game-grid .misc-card {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+/* Common misc card styles */
+.misc-content {
+  flex: 1;
+  width: 100%;
+}
+
+.misc-content h3 {
+  margin: 0;
+}
+
+.misc-description {
+  margin: 10px 0 0;
+  color: var(--muted);
+  text-align: left;
+  font-size: 14px;
+}
+
+.misc-release-info {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  text-align: left;
+}
+
+.misc-content .cta {
+  margin-top: 10px;
+}
+
+.misc-media {
+  flex-shrink: 0;
+}
+
+.game-screenshot {
+  width: 200px;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+@media (max-width: 768px) {
+  /* Extensions Grid - 1 item per row on mobile */
+  .extensions-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .extensions-grid .misc-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  /* Game Grid - stays 1 item per row, but vertical layout on mobile */
+  .game-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .game-grid .misc-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .misc-content {
+    width: 100%;
+  }
+  
+  .misc-description {
+    text-align: left;
+    font-size: 13px;
+  }
+  
+  .misc-release-info {
+    font-size: 12px;
+  }
+  
+  .game-screenshot {
+    width: 250px;
+    max-width: 100%;
+  }
+  
+  .blog-card h3 {
+    font-size: 16px;
+    line-height: 1.3;
+  }
+  
+  .blog-description {
+    font-size: 13px;
+  }
+}
