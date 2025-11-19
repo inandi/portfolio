@@ -1,35 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="dark light">
   <title>Portfolio • Gobinda Nandi</title>
-  <meta name="description" content="Portfolio website of Gobinda Nandi: skills, anonymized projects, experience, and contact.">
+  <meta name="description"
+    content="Portfolio website of Gobinda Nandi: skills, anonymized projects, experience, and contact.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>💼</text></svg>">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>💼</text></svg>">
 </head>
+
 <body>
   <div class="bg" aria-hidden="true">
     <canvas id="quantum" class="bg-canvas"></canvas>
     <svg class="bg-fluid" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" role="img">
       <defs>
         <linearGradient id="g1" x1="0" x2="1" y1="0" y2="1">
-          <stop offset="0%" stop-color="#7aa2ff" stop-opacity="0.25"/>
-          <stop offset="100%" stop-color="#5de4c7" stop-opacity="0.12"/>
+          <stop offset="0%" stop-color="#7aa2ff" stop-opacity="0.25" />
+          <stop offset="100%" stop-color="#5de4c7" stop-opacity="0.12" />
         </linearGradient>
         <linearGradient id="g2" x1="1" x2="0" y1="0" y2="1">
-          <stop offset="0%" stop-color="#5de4c7" stop-opacity="0.18"/>
-          <stop offset="100%" stop-color="#7aa2ff" stop-opacity="0.10"/>
+          <stop offset="0%" stop-color="#5de4c7" stop-opacity="0.18" />
+          <stop offset="100%" stop-color="#7aa2ff" stop-opacity="0.10" />
         </linearGradient>
-        <filter id="blur10"><feGaussianBlur stdDeviation="20"/></filter>
+        <filter id="blur10">
+          <feGaussianBlur stdDeviation="20" />
+        </filter>
       </defs>
       <g filter="url(#blur10)">
-        <circle class="blob blob-a" cx="200" cy="200" r="160" fill="url(#g1)"/>
-        <circle class="blob blob-b" cx="600" cy="420" r="200" fill="url(#g2)"/>
+        <circle class="blob blob-a" cx="200" cy="200" r="160" fill="url(#g1)" />
+        <circle class="blob blob-b" cx="600" cy="420" r="200" fill="url(#g2)" />
       </g>
     </svg>
   </div>
@@ -47,6 +54,197 @@
             <li aria-current="page">Projects</li>
           </ol>
         </nav>
+        <h1 class="section-title">Delivery Highlights [w/o Naming Clients]</h1>
+        <div class="cards projects-grid">
+          <article class="card project-card">
+            <header class="project-head">
+              <p class="project-period">Mar 2024 &mdash; Present</p>
+              <p class="project-role">Senior Engineer · Utility Management System (USA)</p>
+            </header>
+            <p class="project-summary">
+              Build and ship user-facing features for a nationwide utility billing platform, partner with support to
+              reduce production issues, and run AI-focused R&amp;D spikes to automate ticket triage.
+            </p>
+            <ul class="project-meta">
+              <li><strong>Stack</strong> Docker, PHP, Smarty, Python, PostgreSQL, JS, AWS, Git, New Relic</li>
+              <li><strong>Team</strong> 10+ distributed engineers working in two-week Agile releases</li>
+            </ul>
+          </article>
+
+          <article class="card project-card">
+            <header class="project-head">
+              <p class="project-period">Dec 2023 &mdash; Mar 2024</p>
+              <p class="project-role">Senior Technical Lead · Fiber Catalog (Germany)</p>
+            </header>
+            <p class="project-summary">
+              Served as solution consultant for a telecom fiber catalog, advising on configuration workflows and
+              delivering enhancements through an in-house product catalog tool (PCAT).
+            </p>
+            <ul class="project-meta">
+              <li><strong>Focus</strong> Hands-on catalog design, quality reviews, stakeholder workshops</li>
+              <li><strong>Team</strong> 90+ contributors across analysis, catalog, and fulfillment streams</li>
+            </ul>
+          </article>
+
+          <article class="card project-card">
+            <header class="project-head">
+              <p class="project-period">Feb 2023 &mdash; Dec 2023</p>
+              <p class="project-role">Technical Lead · Digital Commerce Journeys (Germany)</p>
+            </header>
+            <p class="project-summary">
+              Led the "Journey" Agile squad responsible for storefront flows, coordinated delivery plans,
+              communicated progress to business stakeholders, and mentored analysts on technical impacts.
+            </p>
+            <ul class="project-meta">
+              <li><strong>Stack</strong> LAMP, Magento, JS, NodeJS, Vagrant, AWS, Jenkins, Git</li>
+              <li><strong>Impact</strong> 84% reduction in code-quality violations via CAST &amp; SonarQube program;
+                led PHP 7.3→8.2 migration spike and fiber solution consulting for the next-gen release.</li>
+            </ul>
+          </article>
+
+          <article class="card project-card">
+            <header class="project-head">
+              <p class="project-period">Apr 2021 &mdash; Jan 2023</p>
+              <p class="project-role">Senior Software Engineer · Telecom Commerce Platform (Germany)</p>
+            </header>
+            <p class="project-summary">
+              Acted as proxy Product Owner for a digital sales stack, curated and prioritized the backlog, and
+              coordinated a "Fastrack" strike team to push incremental features into production.
+            </p>
+            <ul class="project-meta">
+              <li><strong>Stack</strong> LAMP, NodeJS, Magento, AWS, ELKF, Jenkins, Git, RabbitMQ, Grafana</li>
+              <li><strong>Extras</strong> Built Wiremock-based mock APIs and drove CAST/SIG planning for quality uplift
+              </li>
+            </ul>
+          </article>
+
+          <article class="card project-card">
+            <header class="project-head">
+              <p class="project-period">May 2019 &mdash; Apr 2021</p>
+              <p class="project-role">Software Engineer · Digital Commerce Fulfillment (Germany)</p>
+            </header>
+            <p class="project-summary">
+              Split time between L3 production support and L1 feature delivery for a European commerce program, owning
+              incident response, client communications, and iterative enhancements.
+            </p>
+            <ul class="project-meta">
+              <li><strong>Stack</strong> LAMP, Magento, JS, AWS, ELKF, ECS, Jenkins, Git</li>
+              <li><strong>Role</strong> On-call L3 engineer, feature developer, release coordinator</li>
+            </ul>
+          </article>
+
+          <article class="card project-card">
+            <header class="project-head">
+              <p class="project-period">Feb 2019 &mdash; May 2019</p>
+              <p class="project-role">Web Developer · Retail Inventory (India)</p>
+            </header>
+            <p class="project-summary">
+              Built an in-house inventory and social presence tooling stack for a retail brand, enabling unified
+              product,
+              Facebook, and Instagram management from one LAMP dashboard.
+            </p>
+            <ul class="project-meta">
+              <li><strong>Stack</strong> Linux, Apache, MySQL, PHP plus social media APIs</li>
+            </ul>
+          </article>
+
+          <article class="card project-card">
+            <header class="project-head">
+              <p class="project-period">Oct 2018 &mdash; Jan 2019</p>
+              <p class="project-role">Software Engineer · Field Operations Portals (France)</p>
+            </header>
+            <p class="project-summary">
+              Led multiple B2B portals covering inspection workflows, marketing automation, and multi-location
+              analytics;
+              delivered Azure SSO, Google My Business integrations, and secure VPN-backed data access.
+            </p>
+            <ul class="project-meta">
+              <li><strong>Stack</strong> NodeJS, Angular, PostgreSQL, Azure, SVN, LAMP, CI, Google APIs, ELK, OpenVPN
+              </li>
+              <li><strong>Team</strong> 6&ndash;7 engineers with rotating Tech Lead responsibilities</li>
+            </ul>
+          </article>
+
+          <article class="card project-card">
+            <header class="project-head">
+              <p class="project-period">Nov 2017 &mdash; Aug 2018</p>
+              <p class="project-role">PHP Developer · Event &amp; Local Commerce Platforms (USA)</p>
+            </header>
+            <p class="project-summary">
+              Delivered new web features and REST APIs for event management and SMB marketplace products, provided
+              production support, and experimented with ELK-based monitoring.
+            </p>
+            <ul class="project-meta">
+              <li><strong>Stack</strong> XAMPP, NodeJS, jQuery, HTML/CSS, Google &amp; Instagram APIs, PayPal/Stripe,
+                SVN</li>
+              <li><strong>Teams</strong> 3&ndash;10 engineers spanning web and mobile integrations</li>
+            </ul>
+          </article>
+
+          <article class="card project-card">
+            <header class="project-head">
+              <p class="project-period">Aug 2017 &mdash; Oct 2017</p>
+              <p class="project-role">Full Stack Developer · Multi-Domain Commerce Suite (India)</p>
+            </header>
+            <p class="project-summary">
+              Co-created a suite of niche marketplaces covering crafts, jobs, education, fashion, and general retail,
+              handling both front-end and back-end delivery for each vertical.
+            </p>
+            <ul class="project-meta">
+              <li><strong>Stack</strong> XAMPP, CodeIgniter, OpenCart, jQuery, Angular, Facebook/Twitter APIs</li>
+            </ul>
+          </article>
+
+          <article class="card project-card">
+            <header class="project-head">
+              <p class="project-period">Jul 2016 &mdash; Jul 2017</p>
+              <p class="project-role">Software Developer · Workforce &amp; Commerce Systems (India)</p>
+            </header>
+            <p class="project-summary">
+              Delivered an employee management suite (attendance, payroll, tasks) and multiple commerce builds for US
+              and Indian retailers, including API layers for Android apps.
+            </p>
+            <ul class="project-meta">
+              <li><strong>Stack</strong> XAMPP, CodeIgniter, JS, Twilio, Google APIs, Magento</li>
+              <li><strong>Scope</strong> 10+ modules plus several bespoke e-commerce deployments</li>
+            </ul>
+          </article>
+
+          <article class="card project-card">
+            <header class="project-head">
+              <p class="project-period">Jan 2012 &mdash; Jan 2016</p>
+              <p class="project-role">Independent Producer/Director · Self Employed</p>
+            </header>
+            <p class="project-summary">
+            </p>
+            <ul class="project-meta">
+              <li>Disha (2015), A feature Bengali film released in single-screen theaters
+                [<a href="https://inandi.github.io/dishamovie/">https://inandi.github.io/dishamovie/</a>]</li>
+              <li>RED CROSS, Short film for “Yes Foundation” [<a
+                  href="https://bit.ly/3PqA4dq">https://bit.ly/3PqA4dq</a>]</li>
+              <li>Canvas (2015), Pocket movie [<a href="https://bit.ly/3w8ahjI">https://bit.ly/3w8ahjI</a>]</li>
+            </ul>
+          </article>
+
+          <article class="card project-card">
+            <header class="project-head">
+              <p class="project-period">Apr 2011 &mdash; Jan 2012</p>
+              <p class="project-role">Software Developer · Back-Office Tools (India)</p>
+            </header>
+            <p class="project-summary">
+              Migrated legacy Access accounting databases to SQL Server, built payroll and cost-management desktop apps,
+              developed an automated email notification system, and managed physical servers hosting the application
+              with JDBC connections.
+              Maintained existing Visual Basic systems for a nationwide manufacturer.
+            </p>
+            <ul class="project-meta">
+              <li><strong>Stack</strong> Visual Basic 6, VB.NET, SQL Server 6, JDBC</li>
+              <li><strong>Impact</strong> Unified branch and HQ payroll processes, reduced manual reporting, streamlined
+                email communications, ensured robust application-server reliability</li>
+            </ul>
+          </article>
+
+        </div>
       </div>
     </section>
   </main>
@@ -57,5 +255,5 @@
 
   <script src="script.js"></script>
 </body>
-</html>
 
+</html>
