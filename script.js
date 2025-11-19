@@ -244,6 +244,129 @@ function initSubmenus() {
   });
 }
 
+// LinkedIn Recommendations Carousel
+(function () {
+  document.addEventListener('DOMContentLoaded', function () {
+    const carousel = document.querySelector('.recommendations-carousel');
+    if (!carousel) return;
+
+    const slides = carousel.querySelector('.recommendations-carousel-slides');
+    const images = slides.querySelectorAll('img');
+    const dots = carousel.querySelectorAll('.recommendation-dot');
+    let currentSlide = 0;
+
+    function updateCarousel() {
+      // Hide all images
+      images.forEach((img, index) => {
+        img.style.opacity = index === currentSlide ? '1' : '0';
+        img.style.zIndex = index === currentSlide ? '1' : '0';
+      });
+
+      // Update dots
+      dots.forEach((dot, index) => {
+        if (index === currentSlide) {
+          dot.classList.add('active');
+        } else {
+          dot.classList.remove('active');
+        }
+      });
+    }
+
+    // Add click handlers to dots
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        currentSlide = index;
+        updateCarousel();
+        resetAutoScroll();
+      });
+    });
+
+    // Auto-advance carousel every 5 seconds
+    let autoScrollInterval = null;
+
+    function startAutoScroll() {
+      if (autoScrollInterval) {
+        clearInterval(autoScrollInterval);
+      }
+      autoScrollInterval = setInterval(() => {
+        currentSlide = (currentSlide + 1) % dots.length;
+        updateCarousel();
+      }, 5000);
+    }
+
+    function resetAutoScroll() {
+      if (autoScrollInterval) {
+        clearInterval(autoScrollInterval);
+      }
+      startAutoScroll();
+    }
+
+    // Pause on hover
+    carousel.addEventListener('mouseenter', () => {
+      if (autoScrollInterval) {
+        clearInterval(autoScrollInterval);
+      }
+    });
+
+    carousel.addEventListener('mouseleave', () => {
+      startAutoScroll();
+    });
+
+    // Handle window resize (not needed for fade transition, but keeping for consistency)
+    window.addEventListener('resize', () => {
+      // No action needed for fade transition
+    });
+
+    // Initialize
+    updateCarousel();
+    startAutoScroll();
+  });
+})();
+
+// App Carousel functionality
+(function() {
+  document.addEventListener('DOMContentLoaded', function() {
+    const carousel = document.querySelector('.app-carousel');
+    if (!carousel) return;
+    
+    const slides = carousel.querySelector('.carousel-slides');
+    const dots = carousel.querySelectorAll('.carousel-dot');
+    let currentSlide = 0;
+    
+    function updateCarousel() {
+      const slideWidth = 200; // Width of each slide
+      slides.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+      
+      // Update dots
+      dots.forEach((dot, index) => {
+        if (index === currentSlide) {
+          dot.classList.add('active');
+          dot.style.background = 'var(--brand)';
+          dot.style.opacity = '1';
+        } else {
+          dot.classList.remove('active');
+          dot.style.background = 'var(--muted)';
+          dot.style.opacity = '0.5';
+        }
+      });
+    }
+    
+    // Add click handlers to dots
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        currentSlide = index;
+        updateCarousel();
+      });
+    });
+    
+    // Auto-advance carousel every 4 seconds
+    setInterval(() => {
+      currentSlide = (currentSlide + 1) % dots.length;
+      updateCarousel();
+    }, 4000);
+  });
+})();
+
 // Initialize header and menus first
 loadMenu();
 initNavToggle();

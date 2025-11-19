@@ -1239,3 +1239,100 @@ main {
     font-size: 13px;
   }
 }
+
+/* LinkedIn Recommendations Carousel */
+.recommendations-carousel-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.recommendations-carousel {
+  width: 100%;
+  max-width: 900px;
+  position: relative;
+}
+
+.recommendations-carousel-container {
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--elev-1);
+  box-shadow: var(--shadow);
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  position: relative;
+}
+
+.recommendations-carousel-slides {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.recommendations-carousel-slides img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out;
+  margin: 0;
+  padding: 0;
+}
+
+.recommendations-carousel-slides img:first-child {
+  opacity: 1;
+}
+
+.recommendations-carousel-dots {
+  display: none;
+}
+
+.recommendation-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  background: var(--muted);
+  cursor: pointer;
+  opacity: 0.5;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.recommendation-dot:hover {
+  opacity: 0.8;
+  border-color: var(--brand);
+}
+
+.recommendation-dot.active {
+  background: var(--brand);
+  border-color: var(--brand);
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+@media (max-width: 768px) {
+  .recommendations-carousel {
+    max-width: 100%;
+  }
+  
+  .recommendations-carousel-container {
+    aspect-ratio: 4 / 3;
+  }
+  
+  .recommendations-carousel-dots {
+    gap: 8px;
+    margin-top: 16px;
+  }
+  
+  .recommendation-dot {
+    width: 10px;
+    height: 10px;
+  }
+}

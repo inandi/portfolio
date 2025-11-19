@@ -140,49 +140,6 @@
   </footer>
 
   <script src="script.js"></script>
-  <script>
-    // App Carousel functionality
-    document.addEventListener('DOMContentLoaded', function() {
-      const carousel = document.querySelector('.app-carousel');
-      if (!carousel) return;
-      
-      const slides = carousel.querySelector('.carousel-slides');
-      const dots = carousel.querySelectorAll('.carousel-dot');
-      let currentSlide = 0;
-      
-      function updateCarousel() {
-        const slideWidth = 200; // Width of each slide
-        slides.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
-        
-        // Update dots
-        dots.forEach((dot, index) => {
-          if (index === currentSlide) {
-            dot.classList.add('active');
-            dot.style.background = 'var(--brand)';
-            dot.style.opacity = '1';
-          } else {
-            dot.classList.remove('active');
-            dot.style.background = 'var(--muted)';
-            dot.style.opacity = '0.5';
-          }
-        });
-      }
-      
-      // Add click handlers to dots
-      dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-          currentSlide = index;
-          updateCarousel();
-        });
-      });
-      
-      // Auto-advance carousel every 4 seconds
-      setInterval(() => {
-        currentSlide = (currentSlide + 1) % dots.length;
-        updateCarousel();
-      }, 4000);
-    });
-  </script>
 </body>
 
 </html>
