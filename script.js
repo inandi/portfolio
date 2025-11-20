@@ -9,20 +9,14 @@ function getMenuHtml() {
     '<button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>' +
     '<ul id="site-nav" class="nav-list">' +
     '<li><a href="index.html">Home</a></li>' +
-    '<li class="has-submenu">' +
-    '<button class="submenu-toggle" aria-expanded="false">Career</button>' +
-    '<ul class="submenu">' +
-    '<li><a href="projects.html">Projects</a></li>' +
-    '<li class="has-submenu">' +
-    '<button class="submenu-toggle" aria-expanded="false">Achievements</button>' +
-    '<ul class="submenu">' +
-    '<li><a href="courses.html">Courses & Certifications</a></li>' +
+    '<li><a href="experience.html">Experience</a></li>' +
     '<li><a href="books.html">Books</a></li>' +
-    '<li><a href="apps.html">Mobile Apps</a></li>' +
     '<li><a href="blogs.html">Blogs</a></li>' +
-    '<li><a href="misc.html">Miscellaneous</a></li>' +
-    '</ul>' +
-    '</li>' +
+    '<li><a href="products.html">Products</a></li>' +
+    '<li class="has-submenu">' +
+    '<button class="submenu-toggle" aria-expanded="false">Miscellaneous</button>' +
+    '<ul class="submenu">' +
+    '<li><a href="courses.html">Courses</a></li>' +
     '</ul>' +
     '</li>' +
     '</ul>' +
