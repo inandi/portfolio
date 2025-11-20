@@ -101,21 +101,47 @@ if (!prefersReducedMotion) {
 }
 
 // Quantum nodes background (lightweight)
-(() => {
+(function initQuantumBackground() {
+  // Wait for DOM to be ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initQuantumBackground);
+    return;
+  }
+
   const canvas = document.getElementById('quantum');
   if (!canvas) return;
+  
   const ctx = canvas.getContext('2d');
+  if (!ctx) return;
+  
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const dpr = Math.max(1, Math.min(2, window.devicePixelRatio || 1));
   let width = 0, height = 0;
   let nodes = [];
   const MAX_NODES = 60; // keep it lightweight
+  let raf = 0;
+  let isRunning = false;
 
   function resize() {
-    width = canvas.clientWidth;
-    height = canvas.clientHeight;
+    // Get actual canvas container dimensions
+    const container = canvas.parentElement;
+    if (!container) return;
+    
+    width = container.clientWidth || window.innerWidth;
+    height = container.clientHeight || window.innerHeight;
+    
+    // Set canvas size with proper DPR
     canvas.width = Math.floor(width * dpr);
     canvas.height = Math.floor(height * dpr);
+    canvas.style.width = width + 'px';
+    canvas.style.height = height + 'px';
+    
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    
+    // Respawn nodes if already running
+    if (isRunning && nodes.length > 0) {
+      spawnNodes();
+    }
   }
 
   function spawnNodes() {
@@ -129,7 +155,10 @@ if (!prefersReducedMotion) {
   }
 
   function step() {
+    if (!isRunning) return;
+    
     ctx.clearRect(0, 0, width, height);
+    
     // connections
     for (let i = 0; i < nodes.length; i++) {
       for (let j = i + 1; j < nodes.length; j++) {
@@ -149,6 +178,7 @@ if (!prefersReducedMotion) {
         }
       }
     }
+    
     // nodes
     for (const n of nodes) {
       ctx.fillStyle = 'rgba(93,228,199,0.6)';
@@ -159,19 +189,53 @@ if (!prefersReducedMotion) {
       if (n.x < -10) n.x = width + 10; if (n.x > width + 10) n.x = -10;
       if (n.y < -10) n.y = height + 10; if (n.y > height + 10) n.y = -10;
     }
+    
     raf = requestAnimationFrame(step);
   }
 
-  let raf = 0;
   function start() {
     if (prefersReducedMotion) return; // respect reduced motion
+    if (isRunning) return; // already running
+    
     cancelAnimationFrame(raf);
     resize();
+    
+    // Ensure we have valid dimensions
+    if (width === 0 || height === 0) {
+      // Retry after a short delay
+      setTimeout(start, 100);
+      return;
+    }
+    
     spawnNodes();
+    isRunning = true;
     raf = requestAnimationFrame(step);
   }
 
-  window.addEventListener('resize', () => { resize(); });
+  function stop() {
+    isRunning = false;
+    cancelAnimationFrame(raf);
+  }
+
+  // Handle resize with debounce
+  let resizeTimeout;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+      resize();
+    }, 250);
+  });
+
+  // Handle visibility change (pause when tab is hidden)
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      stop();
+    } else {
+      start();
+    }
+  });
+
+  // Start animation
   start();
 })();
 
