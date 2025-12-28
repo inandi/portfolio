@@ -384,89 +384,59 @@ function initSubmenus() {
 // App Carousel functionality
 (function() {
   document.addEventListener('DOMContentLoaded', function() {
-    const carousel = document.querySelector('.app-carousel');
-    if (!carousel) return;
+    const carousels = document.querySelectorAll('.app-carousel');
+    if (!carousels.length) return;
     
-    const container = carousel.querySelector('.carousel-container');
-    const slides = carousel.querySelector('.carousel-slides');
-    const dots = carousel.querySelectorAll('.carousel-dot');
-    let currentSlide = 0;
-    
-    function getSlideWidth() {
-      // Get the actual container width (works for both desktop and mobile)
-      return container ? container.offsetWidth : 200;
-    }
-    
-    function updateCarousel() {
-      const slideWidth = getSlideWidth();
-      slides.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+    // Initialize each carousel independently
+    carousels.forEach(carousel => {
+      const container = carousel.querySelector('.carousel-container');
+      const slides = carousel.querySelector('.carousel-slides');
+      const dots = carousel.querySelectorAll('.carousel-dot');
+      let currentSlide = 0;
       
-      // Update dots
+      function getSlideWidth() {
+        // Get the actual container width (works for both desktop and mobile)
+        return container ? container.offsetWidth : 200;
+      }
+      
+      function updateCarousel() {
+        const slideWidth = getSlideWidth();
+        slides.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+        
+        // Update dots
+        dots.forEach((dot, index) => {
+          if (index === currentSlide) {
+            dot.classList.add('active');
+            dot.style.background = 'var(--brand)';
+            dot.style.opacity = '1';
+          } else {
+            dot.classList.remove('active');
+            dot.style.background = 'var(--muted)';
+            dot.style.opacity = '0.5';
+          }
+        });
+      }
+      
+      // Add click handlers to dots
       dots.forEach((dot, index) => {
-        if (index === currentSlide) {
-          dot.classList.add('active');
-          dot.style.background = 'var(--brand)';
-          dot.style.opacity = '1';
-        } else {
-          dot.classList.remove('active');
-          dot.style.background = 'var(--muted)';
-          dot.style.opacity = '0.5';
-        }
+        dot.addEventListener('click', () => {
+          currentSlide = index;
+          updateCarousel();
+        });
       });
-    }
-    
-    // Add click handlers to dots
-    dots.forEach((dot, index) => {
-      dot.addEventListener('click', () => {
-        currentSlide = index;
-        updateCarousel();
-        resetAutoScroll();
+      
+      // Handle window resize
+      let resizeTimeout;
+      window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+          updateCarousel();
+        }, 250);
       });
+      
+      // Initialize
+      updateCarousel();
     });
-    
-    // Auto-advance carousel every 4 seconds
-    let autoScrollInterval = null;
-    
-    function startAutoScroll() {
-      if (autoScrollInterval) {
-        clearInterval(autoScrollInterval);
-      }
-      autoScrollInterval = setInterval(() => {
-        currentSlide = (currentSlide + 1) % dots.length;
-        updateCarousel();
-      }, 4000);
-    }
-    
-    function resetAutoScroll() {
-      if (autoScrollInterval) {
-        clearInterval(autoScrollInterval);
-      }
-      startAutoScroll();
-    }
-    
-    // Pause on hover (desktop) or touch (mobile)
-    carousel.addEventListener('mouseenter', () => {
-      if (autoScrollInterval) {
-        clearInterval(autoScrollInterval);
-      }
-    });
-    
-    carousel.addEventListener('mouseleave', () => {
-      startAutoScroll();
-    });
-    
-    // Handle window resize
-    let resizeTimeout;
-    window.addEventListener('resize', () => {
-      clearTimeout(resizeTimeout);
-      resizeTimeout = setTimeout(() => {
-        updateCarousel();
-      }, 250);
-    });
-    
-    // Initialize
-    updateCarousel();
-    startAutoScroll();
   });
 })();
 
