@@ -394,6 +394,11 @@ function initSubmenus() {
       const dots = carousel.querySelectorAll('.carousel-dot');
       let currentSlide = 0;
       
+      // Touch/swipe handling
+      let touchStartX = 0;
+      let touchEndX = 0;
+      let isDragging = false;
+      
       function getSlideWidth() {
         // Get the actual container width (works for both desktop and mobile)
         return container ? container.offsetWidth : 200;
@@ -417,12 +422,85 @@ function initSubmenus() {
         });
       }
       
+      function handleSwipe() {
+        const swipeThreshold = 50; // minimum distance for a swipe
+        const diff = touchStartX - touchEndX;
+        
+        if (Math.abs(diff) > swipeThreshold) {
+          if (diff > 0) {
+            // Swiped left - go to next slide
+            if (currentSlide < dots.length - 1) {
+              currentSlide++;
+            }
+          } else {
+            // Swiped right - go to previous slide
+            if (currentSlide > 0) {
+              currentSlide--;
+            }
+          }
+          updateCarousel();
+        }
+      }
+      
       // Add click handlers to dots
       dots.forEach((dot, index) => {
         dot.addEventListener('click', () => {
           currentSlide = index;
           updateCarousel();
         });
+      });
+      
+      // Touch event handlers for swipe
+      container.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+        isDragging = true;
+      }, { passive: true });
+      
+      container.addEventListener('touchmove', (e) => {
+        if (!isDragging) return;
+        touchEndX = e.changedTouches[0].screenX;
+      }, { passive: true });
+      
+      container.addEventListener('touchend', () => {
+        if (!isDragging) return;
+        isDragging = false;
+        handleSwipe();
+      }, { passive: true });
+      
+      // Mouse drag handlers for desktop
+      let mouseStartX = 0;
+      let mouseEndX = 0;
+      let isMouseDragging = false;
+      
+      container.addEventListener('mousedown', (e) => {
+        mouseStartX = e.screenX;
+        isMouseDragging = true;
+        e.preventDefault();
+      });
+      
+      container.addEventListener('mousemove', (e) => {
+        if (!isMouseDragging) return;
+        mouseEndX = e.screenX;
+      });
+      
+      container.addEventListener('mouseup', () => {
+        if (!isMouseDragging) return;
+        isMouseDragging = false;
+        const swipeThreshold = 50;
+        const diff = mouseStartX - mouseEndX;
+        
+        if (Math.abs(diff) > swipeThreshold) {
+          if (diff > 0 && currentSlide < dots.length - 1) {
+            currentSlide++;
+          } else if (diff < 0 && currentSlide > 0) {
+            currentSlide--;
+          }
+          updateCarousel();
+        }
+      });
+      
+      container.addEventListener('mouseleave', () => {
+        isMouseDragging = false;
       });
       
       // Handle window resize
