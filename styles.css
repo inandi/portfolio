@@ -1007,8 +1007,14 @@ main {
 
 /* Apps Grid Responsive */
 .apps-grid {
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(2, 1fr);
   margin-bottom: 16px;
+}
+
+@media (max-width: 768px) {
+  .apps-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .app-card {
