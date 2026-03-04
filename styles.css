@@ -1186,6 +1186,12 @@ main {
   grid-template-columns: repeat(3, 1fr);
 }
 
+.extensions-grid .app-icon-lg {
+  border: none;
+  background: none;
+  height: auto;
+}
+
 .extensions-grid .misc-card {
   display: flex;
   flex-direction: column;
