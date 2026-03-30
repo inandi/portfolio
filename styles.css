@@ -1192,6 +1192,10 @@ main {
   grid-template-columns: repeat(3, 1fr);
 }
 
+.opensource-grid {
+  grid-template-columns: repeat(2, 1fr);
+}
+
 .extensions-grid .app-icon-lg {
   border: none;
   background: none;
@@ -1264,6 +1268,10 @@ main {
 @media (max-width: 768px) {
   /* Extensions Grid - 1 item per row on mobile */
   .extensions-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .opensource-grid {
     grid-template-columns: 1fr;
   }
   
