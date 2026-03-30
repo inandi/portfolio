@@ -302,6 +302,18 @@ function initSubmenus() {
   });
 }
 
+function initUpcomingVisibility() {
+  const params = new URLSearchParams(window.location.search);
+  const showUpComing = params.get('showUpComing') === 'true';
+  const upcomingElements = document.querySelectorAll('[data-upcoming="true"]');
+
+  if (!showUpComing) {
+    upcomingElements.forEach((el) => {
+      el.style.display = 'none';
+    });
+  }
+}
+
 // LinkedIn Recommendations Carousel
 (function () {
   document.addEventListener('DOMContentLoaded', function () {
@@ -523,4 +535,5 @@ loadMenu();
 initNavToggle();
 initSubmenus();
 loadFooter();
+initUpcomingVisibility();
 

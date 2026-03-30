@@ -1062,6 +1062,13 @@ main {
   color: var(--muted);
 }
 
+[data-upcoming="true"] .app-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
 .app-carousel {
   width: 200px;
   position: relative;
