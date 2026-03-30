@@ -1216,6 +1216,10 @@ main {
   grid-template-columns: 1fr;
 }
 
+.software-grid {
+  grid-template-columns: repeat(2, 1fr);
+}
+
 .game-grid .misc-card {
   display: flex;
   flex-direction: row;
@@ -1283,6 +1287,10 @@ main {
   
   /* Game Grid - stays 1 item per row, but vertical layout on mobile */
   .game-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .software-grid {
     grid-template-columns: 1fr;
   }
   
