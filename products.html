@@ -54,7 +54,7 @@
             <li aria-current="page">Products</li>
           </ol>
         </nav>
-        <h2 class="section-title" data-upcoming="true">BlueOS</h2>
+        <h2 class="section-title section" data-upcoming="true">BlueOS</h2>
         <div class="cards game-grid" data-upcoming="true">
           <article class="card misc-card">
             <div class="misc-content">
@@ -81,7 +81,7 @@
         </div>
         <br data-upcoming="true">
 
-        <h2 class="section-title" data-upcoming="true">SILO</h2>
+        <h2 class="section-title section" data-upcoming="true">SILO</h2>
         <div class="cards game-grid" data-upcoming="true">
           <article class="card misc-card">
             <div class="misc-content">
@@ -108,7 +108,7 @@
         </div>
         <br data-upcoming="true">
 
-        <h2 class="section-title">Android App(s)</h2>
+        <h2 class="section-title section">Android App(s)</h2>
         <div class="cards apps-grid">
           <article class="card app-card" data-upcoming="true">
             <div class="app-content">
@@ -381,7 +381,7 @@
         </div>
         <br>
 
-        <h2 class="section-title" data-upcoming="true">iOS App(s)</h2>
+        <h2 class="section-title section" data-upcoming="true">iOS App(s)</h2>
         <div class="cards apps-grid" data-upcoming="true">
           <article class="card app-card">
             <div class="app-content">
@@ -409,7 +409,7 @@
         </div>
         <br data-upcoming="true">
 
-        <h2 class="section-title">VS-Code Extension(s)</h2>
+        <h2 class="section-title section">VS-Code Extension(s)</h2>
         <div class="cards extensions-grid">
           <article class="card misc-card">
             <div class="misc-content">
@@ -756,7 +756,7 @@
         </div>
         <br>
 
-        <h2 class="section-title" data-upcoming="true">OpenSource Plugins</h2>
+        <h2 class="section-title section" data-upcoming="true">OpenSource Plugins</h2>
         <div class="cards extensions-grid opensource-grid" data-upcoming="true">
           <article class="card misc-card">
             <div class="misc-content">
@@ -844,7 +844,102 @@
         </div>
         <br data-upcoming="true">
 
-        <h2 class="section-title">Windows Game(s)</h2>
+        <h2 class="section-title section" data-upcoming="true">Chrome extension(s)</h2>
+        <div class="cards extensions-grid" data-upcoming="true">
+          <article class="card misc-card">
+            <div class="misc-content">
+              <div class="app-row">
+                <div class="app-head">
+                  <img class="app-icon" src="media/extension/microsoft-svgrepo-com.svg" alt="Mimic extension icon"
+                    loading="lazy" decoding="async">
+                  <div>
+                    <h3 style="text-align: left;">Mimic</h3>
+                    <span class="tag">Coming Soon</span>
+                  </div>
+                </div>
+                <img class="app-icon-lg" src="media/404.jpg" alt="Mimic upcoming placeholder" loading="lazy"
+                  decoding="async">
+              </div>
+              <p class="misc-description">
+                Project Summary: Mimic is a high-performance, serverless Chrome extension for automated end-to-end
+                testing. It uses the Chrome Debugger API to simulate authentic hardware events such as file uploads and
+                trusted clicks that typical scripts cannot trigger.
+              </p>
+              <p class="misc-description">
+                Core Components: Capture Engine records precise user interactions and builds robust selectors; Storage
+                Layer uses IndexedDB for high-volume local data including event flows and file blobs; Replay Controller
+                runs recorded sequences with realistic timing and visual playback feedback.
+              </p>
+              <p class="misc-release-info">Planned release: 2026</p>
+            </div>
+          </article>
+
+          <article class="card misc-card" data-upcoming="true">
+            <div class="misc-content">
+              <div class="app-row">
+                <div class="app-head">
+                  <img class="app-icon" src="media/extension/microsoft-svgrepo-com.svg" alt="Shift extension icon"
+                    loading="lazy" decoding="async">
+                  <div>
+                    <h3 style="text-align: left;">Shift</h3>
+                    <span class="tag">Coming Soon</span>
+                  </div>
+                </div>
+                <img class="app-icon-lg" src="media/404.jpg" alt="Shift upcoming placeholder" loading="lazy"
+                  decoding="async">
+              </div>
+              <p class="misc-description">
+                Project Summary: Shift is a high-performance, minimalist 2D vertical racer built as a serverless Chrome
+                Extension in the Side Panel. It emphasizes precision gameplay, fast retries, and zero-cost infrastructure.
+              </p>
+              <p class="misc-description">
+                Technical Core: Custom Canvas 2D engine targeting 60 FPS; Manifest V3 + Side Panel API; seeded PRNG for a
+                deterministic Track of the Day; lightweight AABB collision detection for car-to-wall physics.
+              </p>
+              <p class="misc-description">
+                Full-Stack Edge (Ghost Mode): Instead of video, Shift records telemetry (position and speed) in
+                chrome.storage.local and replays high-score runs as a transparent ghost car using linear interpolation
+                (lerp) for smooth motion.
+              </p>
+              <p class="misc-release-info">Planned release: 2026</p>
+            </div>
+          </article>
+
+          <article class="card misc-card" data-upcoming="true">
+            <div class="misc-content">
+              <div class="app-row">
+                <div class="app-head">
+                  <img class="app-icon" src="media/extension/microsoft-svgrepo-com.svg" alt="Domino extension icon"
+                    loading="lazy" decoding="async">
+                  <div>
+                    <h3 style="text-align: left;">Domino</h3>
+                    <span class="tag">Coming Soon</span>
+                  </div>
+                </div>
+                <img class="app-icon-lg" src="media/404.jpg" alt="Domino upcoming placeholder" loading="lazy"
+                  decoding="async">
+              </div>
+              <p class="misc-description">
+                Project: Domino. Category: Physics-Based Arcade / Chrome Extension. Domino is a high-octane 3D
+                line-clear puzzler that transforms any website into a gravity-bound game board by treating real DOM
+                elements (buttons, images, headers) as physical platforms.
+              </p>
+              <p class="misc-description">
+                Core Gameplay: 3D voxel blocks drop from the top of the browser window, land and bounce across the page
+                content, and challenge players to fill every horizontal cell in a row.
+              </p>
+              <p class="misc-description">
+                The Blast: Completing a row triggers a physics-based explosion, clears the line, and causes the blocks
+                above to cascade downward.
+              </p>
+              <p class="misc-release-info">Planned release: 2026</p>
+            </div>
+          </article>
+ 
+        </div>
+        <br>
+
+        <h2 class="section-title section">Windows Game(s)</h2>
         <div class="cards game-grid">
           <article class="card misc-card">
             <div class="misc-content">
@@ -884,7 +979,7 @@
         </div>
         <br>
 
-        <h2 class="section-title" data-upcoming="true">Software</h2>
+        <h2 class="section-title section" data-upcoming="true">Software</h2>
         <div class="cards software-grid" data-upcoming="true">
           <article class="card misc-card">
             <div class="misc-content">
@@ -906,6 +1001,32 @@
               <p class="misc-release-info">Planned release: 2026</p>
             </div>
           </article>
+
+        <article class="card misc-card" data-upcoming="true">
+          <div class="misc-content">
+            <div class="app-row">
+              <div class="app-head">
+                <img class="app-icon" src="media/extension/microsoft-svgrepo-com.svg" alt="Snappy icon"
+                  loading="lazy" decoding="async">
+                <div>
+                  <h3 style="text-align: left;">Snappy</h3>
+                  <span class="tag">Coming Soon</span>
+                </div>
+              </div>
+            </div>
+            <p class="misc-description">
+              <strong>Snappy</strong> is a lightweight, cross-platform utility that lives in your system tray (Windows) or menu bar (macOS/Linux).
+              It offers a high-speed, "one-click" solution for capturing your entire desktop—across <b>all</b> connected displays—instantly.
+            </p>
+            <ul class="highlights">
+              <li><strong>One-Click Capture:</strong> Take screenshots of every monitor by clicking the tray/menu icon.</li>
+              <li><strong>Multi-Monitor Support:</strong> Automatically detects all connected screens and saves individual files (<i>Screen_1.png</i>, <i>Screen_2.png</i>, etc.).</li>
+              <li><strong>Custom Watermarking:</strong> Add optional text or image overlays, fully configurable in the settings.</li>
+              <li><strong>System Integration:</strong> Silent, minimal resource usage; runs pleasantly in the background.</li>
+            </ul>
+            <p class="misc-release-info">Planned release: 2026</p>
+          </div>
+        </article>
         </div>
         <br data-upcoming="true">
         

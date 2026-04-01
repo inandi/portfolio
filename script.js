@@ -35,7 +35,7 @@ function loadMenu() {
 function getFooterHtml() {
   return (
     '<div class="contact-row" style="justify-content:center; margin-bottom:10px;">' +
-    '<a class="btn primary" href="mailto:01ampoule_zero@icloud.com">01ampoule_zero@icloud.com</a>' +
+    '<a class="btn primary" href="mailto:gobinda.nandi.public@gmail.com">gobinda.nandi.public@gmail.com</a>' +
     '<a class="btn ghost" href="https://www.linkedin.com/in/inandi/" target="_blank" rel="noopener">LinkedIn</a>' +
     '<a class="btn ghost" href="https://github.com/inandi" target="_blank" rel="noopener">GitHub</a>' +
     '<a class="btn ghost" href="https://stackoverflow.com/users/7991798/gobinda-nandi" target="_blank" rel="noopener">Stack Overflow</a>' +
