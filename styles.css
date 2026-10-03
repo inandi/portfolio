@@ -568,6 +568,9 @@ main {
   border: 1px solid color-mix(in hsl, var(--brand-2) 40%, transparent);
   padding: 2px 8px;
   border-radius: 999px;
+  float: left;
+  margin-right: 5px;
+  margin-top: 5px;
 }
 
 .meta {
@@ -1248,14 +1251,23 @@ main {
 }
 
 .misc-release-info {
-  margin: 4px 0 0;
-  color: var(--muted);
-  font-size: 13px;
-  text-align: left;
+  margin-top: auto;
+  margin-bottom: 8px;
+  color: var(--brand-2);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-align: right;
+  opacity: 0.9;
+  align-self: flex-start;
 }
 
 .misc-content .cta {
   margin-top: auto;
+}
+
+.misc-content .misc-release-info + .cta {
+  margin-top: 0;
 }
 
 .misc-media {
